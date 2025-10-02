@@ -1,0 +1,27 @@
+/* Compiled minimal CSS mirror of styles.scss (no Tailwind classes here) */
+:root{--ring:rgba(255,255,255,0.08)}
+html,body{height:100%}
+body{background:#191919;color:#e5e7eb}
+.container{max-width:80rem;margin-left:auto;margin-right:auto;padding-left:1rem;padding-right:1rem}@media(min-width:640px){.container{padding-left:1.5rem;padding-right:1.5rem}}@media(min-width:1024px){.container{padding-left:2rem;padding-right:2rem}}
+.section{padding-top:5rem;padding-bottom:5rem;border-top:1px solid rgba(255,255,255,.05)}
+.section:first-of-type{border-top:0}
+.section-head{margin-bottom:2.5rem}
+.eyebrow{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;font-size:.75rem;letter-spacing:.2em;color:#9ca3af}
+.section-title{font-size:1.875rem;line-height:2.25rem;font-weight:600}@media(min-width:640px){.section-title{font-size:2.25rem;line-height:2.5rem}}
+.link{color:#d1d5db;transition:color .2s}.link:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:.5rem;padding:.5rem 1rem;font-size:.875rem;line-height:1.25rem;border:1px solid rgba(255,255,255,.1);transition:all .2s}
+.btn-primary{background:rgba(255,255,255,.05);color:#fff;box-shadow:0 0 0 2px rgba(34,211,238,.15),0 10px 30px rgba(34,211,238,.12)}.btn-primary:hover{background:rgba(255,255,255,.1)}
+.btn-ghost{background:transparent;color:#e5e7eb}.btn-ghost:hover{background:rgba(255,255,255,.05)}
+.input{width:100%;border-radius:.5rem;background:rgba(0,0,0,.2);color:#f3f4f6;border:1px solid rgba(255,255,255,.1);padding:.5rem .75rem;outline:none}
+.input::placeholder{color:#6b7280}
+.input:focus{box-shadow:0 0 0 2px rgba(103,232,249,.4)}
+.card{border-radius:.75rem;background:rgba(25,25,25,.6);border:1px solid rgba(255,255,255,.1);padding:1.5rem;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.card-title{margin-top:.5rem;font-weight:500}
+.card-desc{margin-top:.25rem;color:#9ca3af}
+.stat{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;font-size:.75rem;letter-spacing:.2em;color:#6b7280}
+.shot{position:relative;border-radius:.75rem;background:linear-gradient(135deg,rgba(0,0,0,.4),rgba(0,0,0,.05));aspect-ratio:16/9;border:1px solid rgba(255,255,255,.1)}
+.reveal{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease}
+.reveal.in{opacity:1;transform:none}
+/* Three.js mount */
+#threeMount{position:absolute;inset:0}
+#threeMount canvas{width:100%!important;height:100%!important;display:block;opacity:.85}

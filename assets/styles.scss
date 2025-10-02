@@ -1,0 +1,47 @@
+// Theme variables
+$base-900: #191919;
+$base-800: #191919;
+$base-700: #191919;
+$brand-500: #22d3ee;
+$brand-400: #67e8f9;
+
+:root {
+  --ring: rgba(255,255,255,0.08);
+}
+
+html, body { height: 100%; }
+
+body {
+  background: $base-800;
+  color: #e5e7eb; // gray-200
+}
+
+/* Utilities to complement Tailwind */
+.container { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+.section { @apply py-20 border-t border-white/5; }
+.section:first-of-type { @apply border-t-0; }
+.section-head { @apply mb-10; }
+.eyebrow { @apply font-mono text-xs tracking-widest text-gray-400; }
+.section-title { @apply text-2xl sm:text-3xl font-semibold; }
+
+/* Components */
+.link { @apply text-gray-300 hover:text-white transition-colors; }
+.btn { @apply inline-flex items-center justify-center rounded px-4 py-2 text-sm ring-1 ring-white/10 transition; }
+.btn-primary { @apply bg-white/5 hover:bg-white/10 text-white shadow-glow; box-shadow: 0 0 0 2px rgba(34,211,238,.15), 0 10px 30px rgba(34,211,238,.12); }
+.btn-ghost { @apply bg-transparent hover:bg-white/5 text-gray-200; }
+.input { @apply w-full rounded bg-black/20 placeholder-gray-500 text-gray-100 ring-1 ring-white/10 focus:outline-none focus:ring-2 focus:ring-cyan-300/40 px-3 py-2; }
+.card { @apply rounded-xl bg-base-900/60 ring-1 ring-white/10 p-6 shadow-card; }
+.card-title { @apply mt-2 font-medium; }
+.card-desc { @apply mt-1 text-gray-400; }
+.stat { @apply font-mono text-xs tracking-widest text-gray-500; }
+
+/* Screens placeholder blocks */
+.shot { @apply aspect-video rounded-xl bg-gradient-to-br from-black/40 to-black/5 ring-1 ring-white/10; }
+
+/* Animations */
+.reveal { opacity: 0; transform: translateY(10px); transition: opacity .5s ease, transform .5s ease; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+/* Three.js mount */
+#threeMount { position: absolute; inset: 0; }
+#threeMount canvas { width: 100% !important; height: 100% !important; display: block; opacity: .85; }

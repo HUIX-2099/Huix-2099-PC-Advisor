@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>H U I X - 2 0 9 9 PC ADVISOR</title>
+  <meta name="description" content="HUIX-2099 PC Advisor — analyze, optimize, and get real-time insights for your PC." />
+  <meta name="theme-color" content="#202020" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%23191919'/%3E%3Ctext x='50' y='60' text-anchor='middle' font-size='46' font-family='monospace' fill='%23fff'%3EH%3C/text%3E%3C/svg%3E" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            base: {
+              900: '#191919',
+              800: '#202020',
+              700: '#262626',
+              600: '#2e2e2e',
+            },
+            brand: {
+              500: '#22d3ee',
+              400: '#67e8f9',
+              300: '#a5f3fc',
+            }
+          },
+          boxShadow: {
+            card: '0 10px 30px rgba(0,0,0,.35)',
+            glow: '0 0 0 2px rgba(34,211,238,.15), 0 10px 30px rgba(34,211,238,.15)'
+          },
+          fontFamily: {
+            mono: ['ui-monospace','SFMono-Regular','Menlo','Monaco','Consolas','Liberation Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom compiled CSS (from SCSS in assets/styles.scss) -->
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="bg-base-800 text-gray-100 antialiased selection:bg-brand-500/20 selection:text-white">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-white/5 backdrop-blur supports-[backdrop-filter]:bg-base-800/70">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <a href="#home" class="flex items-center gap-3 group">
+          <span class="inline-flex h-8 w-8 items-center justify-center rounded bg-base-900 ring-1 ring-white/10 shadow-card">
+            <span class="text-sm font-bold">H</span>
+          </span>
+          <span class="font-mono text-xs sm:text-sm tracking-widest">
+            H U I X - 2 0 9 9 <span class="text-gray-400">PC ADVISOR</span>
+          </span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a class="link" href="#features">Features</a>
+          <a class="link" href="#advisor">Advisor</a>
+          <a class="link" href="#shots">Screens</a>
+          <a class="link" href="#download">Download</a>
+          <a class="btn btn-ghost" href="#contact">Contact</a>
+          <button id="threeToggle" class="btn btn-ghost" type="button">3D Mode</button>
+        </nav>
+        <button id="menuBtn" class="md:hidden btn btn-ghost" aria-label="Menu">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-white/5">
+      <div class="px-4 py-3 space-y-2 bg-base-900/80">
+        <a class="block link" href="#features">Features</a>
+        <a class="block link" href="#advisor">Advisor</a>
+        <a class="block link" href="#shots">Screens</a>
+        <a class="block link" href="#download">Download</a>
+        <a class="block btn btn-ghost" href="#contact">Contact</a>
+        <button id="threeToggleMobile" class="btn btn-ghost w-full" type="button">3D Mode</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="relative overflow-hidden min-h-[88vh] flex items-center justify-center">
+    <!-- subtle vignette/top light -->
+    <div class="absolute inset-0 pointer-events-none bg-gradient-to-b from-white/5 via-transparent to-transparent mix-blend-overlay"></div>
+
+    <div class="container py-16 sm:py-24">
+      <div class="mx-auto max-w-5xl text-center">
+        <div class="relative mt-6">
+          <!-- decorative oversized numerals -->
+          <span class="pointer-events-none select-none absolute -top-10 -left-6 text-7xl sm:text-9xl font-black tracking-tighter text-white/5">20</span>
+          <span class="pointer-events-none select-none absolute -bottom-12 -right-6 text-7xl sm:text-9xl font-black tracking-tighter text-white/5">99</span>
+
+          <!-- three.js canvas mount (behind image) -->
+          <div id="threeMount" class="absolute inset-0 -z-10"></div>
+
+          <!-- centered splash image -->
+          <img
+            src="asetts/HUIX%202099%20pc%20advisor%20splash.png"
+            alt="HUIX‑2099 PC Advisor splash"
+            class="relative mx-auto w-11/12 sm:w-4/5 lg:w-3/4 max-w-[960px] rounded-xl ring-1 ring-white/10 shadow-card"
+            onerror="this.onerror=null;this.src='assets/HUIX%202099%20pc%20advisor%20splash.png'"
+          />
+
+          <!-- barcode badge bottom-left -->
+          <img
+            src="asetts/bar%20code.png"
+            alt="HUIX‑2099 barcode"
+            class="absolute left-0 bottom-0 translate-x-2 translate-y-2 w-28 sm:w-32 opacity-80 hover:opacity-100 transition rounded ring-1 ring-white/10 bg-black/20 p-2"
+            onerror="this.onerror=null;this.src='assets/bar%20code.png'"
+          />
+        </div>
+
+        <div class="mt-8 flex flex-wrap gap-3 justify-center">
+          <a href="#download" class="btn btn-primary">Download</a>
+          <a href="#features" class="btn btn-ghost">Explore features</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">FEATURES</p>
+        <h2 class="section-title">Designed for performance and clarity</h2>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="feature">
+          <h3>Dashboard</h3>
+          <p>Clean, distraction‑free layout inspired by terminal aesthetics and editorial spacing.</p>
+        </article>
+        <article class="feature">
+          <h3>Reports</h3>
+          <p>Auto‑generated weekly health summaries with exportable JSON/CSV.</p>
+        </article>
+        <article class="feature">
+          <h3>Profiles</h3>
+          <p>Switch presets for gaming, creation, or battery saving with one click.</p>
+        </article>
+        <article class="feature">
+          <h3>Alerts</h3>
+          <p>Subtle toasts and tray notifications. No nagging. No bloat.</p>
+        </article>
+        <article class="feature">
+          <h3>Privacy</h3>
+          <p>Local processing by default. Share diagnostics only when you choose.</p>
+        </article>
+        <article class="feature">
+          <h3>Extensible</h3>
+          <p>Plugin hooks for sensor inputs and custom actions.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Advisor CTA -->
+  <section id="advisor" class="section">
+    <div class="container grid gap-8 lg:grid-cols-2 items-center">
+      <div>
+        <p class="eyebrow">ADVISOR</p>
+        <h2 class="section-title">A quiet expert beside your desktop</h2>
+        <p class="mt-4 text-gray-400">The Advisor translates telemetry into human language and suggests the next best action—update drivers, free space, or schedule a tune‑up.</p>
+        <div class="mt-6 flex gap-3">
+          <button class="btn btn-primary" data-demo>Run a demo</button>
+          <a class="btn btn-ghost" href="#shots">View screens</a>
+        </div>
+      </div>
+      <div class="rounded-xl bg-base-900/60 ring-1 ring-white/10 p-6 shadow-card">
+        <div class="flex items-center justify-between text-xs text-gray-400">
+          <span class="font-mono">advisor.log</span>
+          <span>live</span>
+        </div>
+        <div id="log" class="mt-4 h-56 overflow-auto space-y-2 font-mono text-[12px] leading-relaxed">
+          <p class="text-gray-500">Waiting for demo...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots -->
+  <section id="shots" class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">SCREENS</p>
+        <h2 class="section-title">Monochrome, crisp, legible</h2>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="shot"></div>
+        <div class="shot"></div>
+        <div class="shot"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download -->
+  <section id="download" class="section">
+    <div class="container text-center">
+      <p class="eyebrow">DOWNLOAD</p>
+      <h2 class="section-title">Get HUIX‑2099 PC Advisor</h2>
+      <p class="max-w-xl mx-auto text-gray-400">Windows build. Lightweight installer, no bundled extras.</p>
+      <div class="mt-6 flex justify-center gap-3">
+        <a class="btn btn-primary" href="#" download>Download .exe</a>
+        <a class="btn btn-ghost" href="#faq">System requirements</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">FAQ</p>
+        <h2 class="section-title">Answers</h2>
+      </div>
+      <div class="divide-y divide-white/10 rounded-xl ring-1 ring-white/10 bg-base-900/40">
+        <details class="group p-5 open:bg-base-900/50">
+          <summary class="cursor-pointer flex items-center justify-between">Is it free? <span class="text-gray-500 group-open:hidden">+</span><span class="text-gray-500 hidden group-open:inline">−</span></summary>
+          <p class="mt-2 text-gray-400">Core features are free during beta.</p>
+        </details>
+        <details class="group p-5 open:bg-base-900/50">
+          <summary class="cursor-pointer flex items-center justify-between">Does it run offline? <span class="text-gray-500 group-open:hidden">+</span><span class="text-gray-500 hidden group-open:inline">−</span></summary>
+          <p class="mt-2 text-gray-400">Yes. All analysis runs locally.</p>
+        </details>
+        <details class="group p-5 open:bg-base-900/50">
+          <summary class="cursor-pointer flex items-center justify-between">Will it slow my PC? <span class="text-gray-500 group-open:hidden">+</span><span class="text-gray-500 hidden group-open:inline">−</span></summary>
+          <p class="mt-2 text-gray-400">Designed to be idle‑friendly and lightweight.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container grid gap-8 lg:grid-cols-2 items-start">
+      <div>
+        <p class="eyebrow">CONTACT</p>
+        <h2 class="section-title">Say hello</h2>
+        <p class="text-gray-400">Questions or feedback? Send a note.</p>
+      </div>
+      <form class="rounded-xl bg-base-900/60 ring-1 ring-white/10 p-6 shadow-card space-y-4">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <input class="input" placeholder="Name" required />
+          <input class="input" type="email" placeholder="Email" required />
+        </div>
+        <textarea class="input min-h-[140px]" placeholder="Message" required></textarea>
+        <button class="btn btn-primary w-full sm:w-auto" type="submit">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/5">
+    <div class="container py-10 text-sm text-gray-500 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <span class="font-mono">© <span id="year"></span> HUIX‑2099</span>
+      <div class="flex items-center gap-4">
+        <a class="link" href="#home">Top</a>
+        <a class="link" href="#download">Download</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>
